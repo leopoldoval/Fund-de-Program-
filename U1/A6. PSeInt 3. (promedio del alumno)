@@ -1,0 +1,67 @@
+Realiza un pseudocódigo que calcule el promedio de un alumno, el usuario ingresará su nombre y edad, después deberá ingresar sus 3 instrumentos, examen que vale el 30%, tareas que vale el 20% y trabajos en clase que vale el 50%, deberá calcular el promedio final.
+
+Usando operadores, deberá validar si el alumno aprobó con una calificación igual o mayor a 6.
+
+La respuesta debe mostrar el nombre del alumno, su edad, y el valor de cada instrumento, su promedio final, y mostrar si el alumno aprobó con un Verdadero o Falso.
+
+Para la entrega, añade el código en un archivo tipo txt y una captura de la consola con la respuesta.
+
+Algoritmo promedio_de_alumno
+
+	Escribir "nombre"
+    Leer nom
+    Escribir "edad"
+    Leer edad
+    Escribir "calificacion del examen"
+    Leer cal
+    Escribir "calificacion de tareas"
+    Leer tar	
+	Escribir "calificacion de trabajos en clase"
+    Leer tclas
+	
+	// Asignación inicial de valores
+    proex=(cal/10)*.30
+	prota=(tar/10)*.20
+	protclas=(tclas/10)*.50
+	profi=proex+prota+protclas
+	
+	// Operadores relacionales
+    Escribir "Operadores relacionales:"
+    Escribir "el alumno: ",nom
+    Escribir "de:",edad,"años"
+    Escribir "tiene las siguientes ponderaciones:"
+    Escribir "en el examen el alumno tiene:",cal, "con un promedio parcial de:",proex*10
+    Escribir "en tareas el alumno tiene;",tar, "con un promedio de:",prota*10
+    Escribir "en trabajos de clase el alumno tiene;",tclas,"con un promedio parcial de:",protclas*10
+    Escribir "en total el alumno tiene un promedio de:",profi*10
+	
+	// Operadores lógicos
+	apro=(profi*10)>= 6
+	Escribir  apro
+	
+FinAlgoritmo
+
+
+*** Ejecución Iniciada. ***
+nombre
+> leopoldo
+edad
+> 30
+calificacion del examen
+> 10
+calificacion de tareas
+> 10
+calificacion de trabajos en clase
+> 10
+Operadores relacionales:
+el alumno: leopoldo
+de:30años
+tiene las siguientes ponderaciones:
+en el examen el alumno tiene:10con un promedio parcial de:3
+en tareas el alumno tiene;10con un promedio de:2
+en trabajos de clase el alumno tiene;10con un promedio parcial de:5
+en total el alumno tiene un promedio de:10
+VERDADERO
+*** Ejecución Finalizada. ***
+
+
