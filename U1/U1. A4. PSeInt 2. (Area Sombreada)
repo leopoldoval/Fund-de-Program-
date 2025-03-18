@@ -1,0 +1,21 @@
+Algoritmo Area_sombreada
+	Escribir "Ingresa hipotenusa"
+    Leer hipo
+    Escribir "Ingresa el radio del circulo"
+    Leer rad_c
+	
+	//variables de las operaciones
+	X=(hipo*hipo)-(rad_c*rad_c)	
+	altura= RAIZ(X)
+	ATRANG=((rad_c+rad_c)*altura)/2
+	ACIR=3.1416*(rad_c*rad_c)
+	mitcirculo=ACIR/2
+	cuacirculo=ACIR/4
+	Rad_chico=rad_c/2
+	ACIR_CHICO=3.1416*(Rad_chico*Rad_chico)
+	MEDIOACIR_CHICO=ACIR_CHICO/2
+	AREA_ROJA=ATRANG+cuacirculo-MEDIOACIR_CHICO
+	
+	Escribir "area roja",AREA_ROJA
+	
+FinAlgoritmo
