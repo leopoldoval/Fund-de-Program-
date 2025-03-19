@@ -1,0 +1,62 @@
+Un banco necesita realizar un sistema de evaluación preliminar para otorgar un crédito, a fin de mejorar el tiempo de validación y que los potenciales clientes puedan saber de manera más rápido a quiénes se les pudiera otorgar un crédito.
+
+De acuerdo a la última reunión innecesaria, a las 6:00 p.m. un día sábado, se presentaron las siguientes condicionales.
+
+El prospecto debe tener al menos 21 años de edad, debe tener un ingreso de al menos 8,500 mensuales, debe tener al menos 5 años de historial crediticio y dicho historial crediticio deberá ser positivo, es decir, que siempre han pagado a tiempo, finalmente, el monto del crédito deberá ser de al menos $10,000.
+
+Después de una discusión acalorada donde la Lic. Petra comenzó a llorar defendiendo a la gente de bajos recursos, se llegó al siguiente acuerdo, fue horrible, la reunión terminó a las 9:00 p.m., pero al final, todos abrazaron a la Lic. Petra y oraron por ella, hubo galletas y café para todos. Se llegaron a los siguientes acuerdos.
+
+El prospecto deberá tener al menos 18 años de edad, con un ingreso de al menos $4,000 al mes, deberá tener al menos 2 años trabajando, ya no se revisará su historial crediticio y se estableció a que el préstamo máximo sería de máximo un 15% del salario mensual del prospecto multiplicado por 12 mensualidades. Adicionalmente, si el prospecto tiene al menos $10,000 de saldo en su cuenta de banco o si el préstamo es para una cuestión médica, su crédito será aprobado automáticamente.
+
+El reporte deberá mostrar la edad del prospecto, su ingreso mensual, de cuánto sería el monto máximo del préstamo y su crédito será aprobado o no.
+
+Algoritmo sin_titulo
+	Definir edad Como Entero
+    Definir ingre_mes Como Real
+	definir a_trab como real 
+	definir cu_banc Como Real
+    definir m_presta Como Logico
+	
+    Escribir "edad:"
+    Leer edad
+    
+    Escribir "Ingrese el salario mensual:"
+    Leer ingre_mes
+    
+    Escribir "años trabajados:"
+    Leer a_trab
+    
+    Escribir "¿el prestamo será para gastpos medicos? (1 = Sï, 0 = No):"
+    Leer m_presta
+    
+	escribir "saldo actual en el banco:"
+	leer cu_banc
+	
+	pre_max=(ingre_mes*.15)*12
+	
+	c1 = edad >= 18    
+    c2 = ingre_mes >= 4000
+	c3 = a_trab >= 2
+    c4 = cu_banc <= 10000
+	
+       // Evaluación de descuento
+    cred_apro <- (c1) Y (c2) y (c3) O c4 O m_presta
+    
+    Escribir " el solicitante tiene:" edad, " años"
+	escribir " su ingreso mensual es de: " ingre_mes
+	escribir " su monto maximo de prestamos será de: " pre_max
+	escribir " su credito:" cred_apro
+FinAlgoritmo
+
+Ingrese el salario mensual:
+> 6000
+años trabajados:
+> 15
+¿el prestamo será para gastpos medicos? (1 = Sï, 0 = No):
+> 0
+saldo actual en el banco:
+> 20000
+ el solicitante tiene:30 años
+ su ingreso mensual es de: 6000
+ su monto maximo de prestamos será de: 10800
+ su credito:VERDADERO
