@@ -1,0 +1,112 @@
+La abarrotera "Kamarena" necesita trabajar en un sistema que le ayude a registrar de manera fácil y rápida todos sus pedidos, hubo una explosión en el mercado al otro lado de la ciudad y ellos han quedado como el único lugar disponible para comprar, esa idea de poner una bomba ha salido terriblemente bien (no hubo ningún herido).
+
+Mientras el dueño sigue luchando entre entregarse a las autoridades por lo sucedido y pedir perdón a las familias involucradas, ha pedido a su asesor externo, el "Teclas" que le ayude con un sistema.
+
+Para ingresar al sistema debe pedir una contraseña (Mientras), que debe ser una fecha de nacimiento en formato YYYY-MM-DD, una vez en el sistema, debe preguntar si (Si) quiere hacer registros de zanahorias o de tomates.
+
+Si elige zanahorias, deberá pedir que se ingresen cuántas cajas deberá ingresar (Para), como cada caja tiene un valor diferente, habrá que ingresarlo manualmente una por una.
+
+Si elige tomates, deberá ingresar cuantas cajas se necesiten y cuando escriba el número 100001 deberá terminar de registrar (Mientras).
+
+En ambos casos, deberá qué opción se eligió y mostrar cuántas cajas se añadieron, cuánto fue el total del peso y cuánto fue el costo total de esa venta, las zanahorias cuestan $15.84 el kilo y los tomates cuestan $11.34 el kilo, si (Si) la venta supera los $10,000, se le hará un descuento automático del 7.5% del valor total.
+
+Finalmente, deberá preguntar si (Si) el cliente necesita o no envío, si requiere envío deberá añadir $150 más a su pedido, de lo contrario, mostrará el precio anterior.
+
+Algoritmo cajas_tomates_zanahorias
+	
+    Escribir "Introduce la contraseña ( formato; yyyy/mm/dd): "
+    Leer contraseña
+	
+    Mientras contraseña <> "1963/08/27" Hacer
+        Escribir "Contraseña incorrecta. Inténtalo de nuevo:"
+        Leer contraseña
+    FinMientras
+	
+    Escribir "Acceso concedido."
+	
+    Escribir "¿Qué desea registrar? (1: Zanahorias, 2: Tomates)"
+    Leer veg
+	
+    totPes <- 0
+    costTot <- 0
+	
+    Si veg = 1 Entonces // Zanahorias
+        Escribir "Ingrese la cantidad de cajas de zanahorias a registrar: "
+        Leer cajas
+        
+        Para i <- 1 Hasta cajas Hacer
+            Escribir "Ingrese el peso en kg de la caja ", i, ": "
+            Leer peso
+            totPes <- totPes + peso
+            costTot <- costTot + (peso * 15.84)
+        FinPara
+		
+		Escribir " usted eligio la opcion: ", veg
+		Escribir "usted añadio: ",cajas, " cajas "
+		Escribir "el peso total fue de: ", totPes, " KG. "
+		Escribir "el costo total de esa venta fue de: $", costTot
+		
+	SiNo //Tomates
+		Escribir "Ingrese la cantidad de cajas de tomates a registrar (escriba 100001 para terminar): "
+		Leer cajas
+        
+        Para i <- 1 Hasta cajas Hacer
+            Escribir "Ingrese el peso en kg de la caja ", i, ": "
+            Leer peso
+            totPes <- totPes + peso
+            costTot <- costTot + (peso * 15.84)
+        FinPara
+		
+		Escribir " usted eligio la opcion: ", veg
+		Escribir "usted añadio: ",cajas, " cajas "
+		Escribir "el peso total fue de: ", totPes, " KG. "
+		Escribir "el costo total de esa venta fue de: $", costTot
+		
+	FinSi
+	
+	desc=costTot-(costTot*0.075)
+	
+	si costTot>= 10000 Entonces
+		Escribir "usted tiene un descuento automático del 7.5% del valor total"
+		Escribir "su costo total es de: $", desc 
+	FinSi
+	
+	Escribir "usted requiere envio eliga la opcion: 1 (si), 2 (no): "
+	Leer envi
+	
+	totenvi=desc+150
+	
+	si envi<>1 Entonces
+		Escribir "el costo total de su compra es de: $", costTot
+	SiNo
+		Escribir "el costo total de su compra con todo y envio sera de: $", totenvi
+	FinSi
+	
+FinAlgoritmo
+
+
+*** Ejecución Iniciada. ***
+Introduce la contraseña ( formato; yyyy/mm/dd):
+> 1963/08/27
+Acceso concedido.
+¿Qué desea registrar? (1: Zanahorias, 2: Tomates)
+> 1
+Ingrese la cantidad de cajas de zanahorias a registrar:
+> 2
+Ingrese el peso en kg de la caja 1:
+> 150
+Ingrese el peso en kg de la caja 2:
+> 600
+ usted eligio la opcion: 1
+usted añadio: 2 cajas
+el peso total fue de: 750 KG.
+el costo total de esa venta fue de: $11880
+usted tiene un descuento automático del 7.5% del valor total
+su costo total es de: $10989
+usted requiere envio eliga la opcion: 1 (si), 2 (no):
+> 2
+el costo total de su compra es de: $11880
+*** Ejecución Finalizada. ***
+
+
+
