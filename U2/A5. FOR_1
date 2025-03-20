@@ -1,0 +1,65 @@
+Una primaria necesita un sistema para calcular las calificaciones, pero dependiendo del grado varían las materias y eso genera un trabajo más complejo para poder calcular el promedio de cada alumno correctamente.
+
+La directora quiere que los maestros puedan ingresar el nombre del alumno que van a evaluar, después cuántas materias van a calificar, después, ingresar cada calificación, si el resultado es mayor a 6, deberá mostrar un mensaje que aprobó, si es menor, deberá mostrar un mensaje que necesitará recursamiento y si la calificación es igual a 10, deberá mostrar un mensaje que es un alumno destacado.
+
+Al final, el programa debe mostrar un reporte con el nombre del alumno, su promedio final y el mensaje que dependerá de su calificación.
+
+Algoritmo calificaciones
+	
+	Escribir "ingresar nombre del alumno: "
+	leer noma
+	Escribir "cuantas materias va a calificar: "
+	Leer n
+	
+	Escribir "Ingresa las calificaciones:"
+    Para i <- 1 Hasta n Hacer
+        Escribir "materia ", i, ": "
+        Leer mat
+        Escribir "Has agregado: ", mat
+		Escribir "Ingresa calificacion"
+		Leer cal
+		acumu = cal + acumu
+    FinPara
+	prom= acumu/n
+	
+	Escribir "calificaciones capturadas, el promedio de calif es: " prom " se calificaron " i-1, " materias"
+	
+	si prom<6 Entonces
+		Escribir "anumno (a) ", noma, " necesita recursar la materia"
+	SiNo
+		si prom=10 Entonces
+			Escribir "alumno (a) ", noma, " es destacado"
+		SiNo
+			Escribir "alumno (a) ", noma, " aprobo"
+		FinSi
+	FinSi
+	
+FinAlgoritmo
+
+
+*** Ejecución Iniciada. ***
+ingresar nombre del alumno:
+> POLO
+cuantas materias va a calificar:
+> 3
+Ingresa las calificaciones:
+materia 1:
+> 10
+Has agregado: 10
+Ingresa calificacion
+> 9
+materia 2:
+> 5
+Has agregado: 5
+Ingresa calificacion
+> 5
+materia 3:
+> 9
+Has agregado: 9
+Ingresa calificacion
+> 4
+calificaciones capturadas, el promedio de calif es: 6 se calificaron 3 ma
+terias
+alumno (a) POLO aprobo
+*** Ejecución Finalizada. ***
+
