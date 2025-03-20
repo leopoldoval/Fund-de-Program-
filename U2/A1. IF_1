@@ -1,0 +1,65 @@
+Diseña un algoritmo que resuelva el siguiente problema.
+
+Un programador desea saber qué unidad de medida de datos debe ser la más adecuada dependiendo de los bytes que ingrese el usuario. Las unidades a revisar son KB, MB, GB, TB y PB. Usa la siguiente tabla de referencia.
+
+
+
+Si el usuario ingresa 5045 bytes, este se divide entre 1024 y el mensaje debería ser 4.92 KB. 
+
+Usa este enlace para validar la información. https://discoveryformacion.com/calculadora-para-convertir-unidades-de-almacenamiento-informaticas/
+
+Algoritmo UnidadDeMedida
+    Definir bytes Como Real
+    Definir unidad Como Caracter
+    Definir resultado Como Real
+    Definir KB, MB, GB, TB, PB Como Real
+    
+    KB = 1024
+    MB = KB * 1024
+    GB = MB * 1024
+    TB = GB * 1024
+    PB = TB * 1024
+    
+    Escribir "Ingrese la cantidad de bytes:"
+    Leer bytes
+    
+    Si bytes < KB Entonces
+        unidad = "bytes"
+        resultado = bytes
+    FinSi
+    
+    Si bytes >= KB Y bytes < MB Entonces
+        unidad = "KB"
+        resultado = bytes / KB
+    FinSi
+    
+    Si bytes >= MB Y bytes < GB Entonces
+        unidad = "MB"
+        resultado = bytes / MB
+    FinSi
+    
+    Si bytes >= GB Y bytes < TB Entonces
+        unidad = "GB"
+        resultado = bytes / GB
+    FinSi
+    
+    Si bytes >= TB Y bytes < PB Entonces
+        unidad = "TB"
+        resultado = bytes / TB
+    FinSi
+    
+    Si bytes >= PB Entonces
+        unidad = "PB"
+        resultado = bytes / PB
+    FinSi
+    
+    Escribir "La cantidad ingresada es: ", resultado, " ", unidad
+FinAlgoritmo
+
+
+*** Ejecución Iniciada. ***
+Ingrese la cantidad de bytes:
+> 52421251
+La cantidad ingresada es: 49.9928007126 MB
+*** Ejecución Finalizada. ***
+
