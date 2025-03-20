@@ -1,0 +1,71 @@
+La empresa de manufactura "ACME", necesita un nuevo control para gestionar su inventario por el área correspondiente, últimamente el turno de la tarde parece "multiplicar" la producción por las noches cuando sale el supervisor, lo cual ha generado pérdidas en la empresa.
+
+Ahora, necesitan añadir accesos para registrar la producción diaria, para ello necesitan un sistema protegido por contraseña de al menos 6 caracteres, de 3 letras, al menos 1 mayúsculas y 3 números que no sean consecutivos. Deberá poner un mensaje que diga que se debe llamar al supervisor si la contraseña es incorrecta, de lo contrario, deberá mostrar un mensaje de bienvenida.
+
+Una vez ingresado el sistema, deberá poder registrar las piezas fabricadas, para ello, el sistema deberá pedir la cantidad de piezas que se quieren añadir y permitir el registro, el supervisor deberá poder ingresar todas las piezas que requiera y para terminar el ingreso deberá ingresar 4 ceros consecutivos.
+
+Al terminar, deberá mostrar la suma total de las piezas fabricadas, si el total de esas ventas es mayor a 10,000 unidades deberá mostrar un mensaje de que se ha cumplido la meta, de lo contrario, deberá mostrar una alerta para producción.
+
+Algoritmo ACME_y_sus_piezas
+	
+	Definir contraseña, entrada Como Cadena
+	Definir piezas, total_piezas Como Entero
+	contraseña <- "Acme311" 
+	total_piezas <- 0
+	
+	Escribir "Ingrese la contraseña para acceder al sistema:"
+	Leer entrada
+	
+	Mientras entrada <> contraseña Hacer
+		Escribir "Contraseña incorrecta. Llame al supervisor."
+		Escribir "Ingrese nuevamente la contraseña:"
+		Leer entrada
+	FinMientras
+	
+	Escribir "Bienvenido al sistema de registro de producción."
+	
+	Escribir "Ingrese la cantidad de piezas fabricadas (Ingrese 0000 para finalizar): "
+	Leer piezas
+	
+	Mientras piezas <> 0000 Hacer
+		Si piezas > 0 Entonces
+			total_piezas <- total_piezas + piezas
+		Sino
+			Escribir "Cantidad inválida, ingrese un número positivo."
+		FinSi
+		Escribir "Ingrese otra cantidad de piezas (Ingrese 0000 para finalizar):"
+		Leer piezas
+	FinMientras
+	
+	Escribir "Total de piezas registradas: ", total_piezas, " pzs."
+	
+	Si total_piezas > 10000 Entonces
+		Escribir "¡Meta cumplida! Producción alcanzó el objetivo."
+	Sino
+		Escribir "ALERTA: Producción por debajo de la meta, revisar inventario."
+    FinSi
+	
+FinAlgoritmo
+
+
+*** Ejecución Iniciada. ***
+Ingrese la contraseña para acceder al sistema:
+> Acme311
+Bienvenido al sistema de registro de producción.
+Ingrese la cantidad de piezas fabricadas (Ingrese 0000 para finalizar):
+> 5000
+Ingrese otra cantidad de piezas (Ingrese 0000 para finalizar):
+> 2541
+Ingrese otra cantidad de piezas (Ingrese 0000 para finalizar):
+> 514325
+Ingrese otra cantidad de piezas (Ingrese 0000 para finalizar):
+> 515
+Ingrese otra cantidad de piezas (Ingrese 0000 para finalizar):
+> 0000
+Total de piezas registradas: 522381 pzs.
+¡Meta cumplida! Producción alcanzó el objetivo.
+*** Ejecución Finalizada. ***
+
+
+
+
