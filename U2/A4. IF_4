@@ -1,0 +1,207 @@
+El programador sigue teniendo complicaciones para ajustar su código cuando ingresan valores, pero necesita ayuda, ahora su jefe, que no conoce mucho de programación, quiere un programa para calcular los rendimientos de 4 vendedores y ver la diferencia entre estos.
+
+El programa debe recibir los 4 valores de los vendedores, que se calcula en ventas por mes, después, el programa debe ordenarlos de menor a mayor, siendo 4 el mayor y 1 el menor, una vez hecho esto debe hacer las siguientes operaciones.
+
+Mostrar los números ordenados
+El resultado del 4 menos el 1
+El resultado del 2 menos el 1
+El resultado del 4 menos el 3
+El resultado del 3 menos el 2
+La suma de todas las ventas y el promedio general
+
+Algoritmo sin_titulo
+	Definir v1, v2, v3, v4 Como Entero
+    Definir p1, p2, p3, p4 Como Entero
+	
+    // Entrada de datos
+    Escribir "Ingrese las ventas del vendedor 1: "
+    Leer v1
+    Escribir "Ingrese las ventas del vendedor 2: "
+    Leer v2
+    Escribir "Ingrese las ventas del vendedor 3: "
+    Leer v3
+    Escribir "Ingrese las ventas del vendedor 4: "
+    Leer v4
+	
+    // Comparaciones para ordenar de mayor a menor
+    Si v1 >= v2 Y v1 >= v3 Y v1 >= v4 Entonces
+        p1 <- v1
+        Si v2 >= v3 Y v2 >= v4 Entonces
+            p2 <- v2
+            Si v3 >= v4 Entonces
+                p3 <- v3
+                p4 <- v4
+            Sino
+                p3 <- v4
+                p4 <- v3
+            FinSi
+        Sino
+            Si v3 >= v2 Y v3 >= v4 Entonces
+                p2 <- v3
+                Si v2 >= v4 Entonces
+                    p3 <- v2
+                    p4 <- v4
+                Sino
+                    p3 <- v4
+                    p4 <- v2
+                FinSi
+            Sino
+                p2 <- v4
+                Si v2 >= v3 Entonces
+                    p3 <- v2
+                    p4 <- v3
+                Sino
+                    p3 <- v3
+                    p4 <- v2
+                FinSi
+            FinSi
+        FinSi
+    Sino
+        Si v2 >= v1 Y v2 >= v3 Y v2 >= v4 Entonces
+            p1 <- v2
+            Si v1 >= v3 Y v1 >= v4 Entonces
+                p2 <- v1
+                Si v3 >= v4 Entonces
+                    p3 <- v3
+                    p4 <- v4
+                Sino
+                    p3 <- v4
+                    p4 <- v3
+                FinSi
+            Sino
+                Si v3 >= v1 Y v3 >= v4 Entonces
+                    p2 <- v3
+                    Si v1 >= v4 Entonces
+                        p3 <- v1
+                        p4 <- v4
+                    Sino
+                        p3 <- v4
+                        p4 <- v1
+                    FinSi
+                Sino
+                    p2 <- v4
+                    Si v1 >= v3 Entonces
+                        p3 <- v1
+                        p4 <- v3
+                    Sino
+                        p3 <- v3
+                        p4 <- v1
+                    FinSi
+                FinSi
+            FinSi
+        Sino
+            Si v3 >= v1 Y v3 >= v2 Y v3 >= v4 Entonces
+                p1 <- v3
+                Si v1 >= v2 Y v1 >= v4 Entonces
+                    p2 <- v1
+                    Si v2 >= v4 Entonces
+                        p3 <- v2
+                        p4 <- v4
+                    Sino
+                        p3 <- v4
+                        p4 <- v2
+                    FinSi
+                Sino
+                    Si v2 >= v1 Y v2 >= v4 Entonces
+                        p2 <- v2
+                        Si v1 >= v4 Entonces
+                            p3 <- v1
+                            p4 <- v4
+                        Sino
+                            p3 <- v4
+                            p4 <- v1
+                        FinSi
+                    Sino
+                        p2 <- v4
+                        Si v1 >= v2 Entonces
+                            p3 <- v1
+                            p4 <- v2
+                        Sino
+                            p3 <- v2
+                            p4 <- v1
+                        FinSi
+                    FinSi
+                FinSi
+            Sino
+                p1 <- v4
+                Si v1 >= v2 Y v1 >= v3 Entonces
+                    p2 <- v1
+                    Si v2 >= v3 Entonces
+                        p3 <- v2
+                        p4 <- v3
+                    Sino
+                        p3 <- v3
+                        p4 <- v2
+                    FinSi
+                Sino
+                    Si v2 >= v1 Y v2 >= v3 Entonces
+                        p2 <- v2
+                        Si v1 >= v3 Entonces
+                            p3 <- v1
+                            p4 <- v3
+                        Sino
+                            p3 <- v3
+                            p4 <- v1
+                        FinSi
+                    Sino
+                        p2 <- v3
+                        Si v1 >= v2 Entonces
+                            p3 <- v1
+                            p4 <- v2
+                        Sino
+                            p3 <- v2
+                            p4 <- v1
+                        FinSi
+                    FinSi
+                FinSi
+            FinSi
+        FinSi
+    FinSi
+	
+	// Mostrar los resultados ordenados
+    Escribir "Ventas ordenadas de mayor a menor:"
+    Escribir "puesto 4: ", p1
+    Escribir "puesto 3: ", p2
+    Escribir "puesto 2: ", p3
+    Escribir "puesto 1: ", p4
+	
+	r4= p1-p4
+	r2= p3-p4
+	r41= p1-p2
+	r3= p2-p3
+	sum= p4+p3+p2+p1
+	prom= sum/4
+	
+	Escribir "El resultado del 4 menos el 1: ", r4 
+	Escribir "El resultado del 2 menos el 1: ", r2
+	Escribir "El resultado del 4 menos el 3: ", r41
+	Escribir "El resultado del 3 menos el 2: ", r3
+	Escribir "La suma de todas las ventas es: ", sum
+	Escribir "el promedio es de: ", prom
+	
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Ingrese las ventas del vendedor 1:
+> 15
+Ingrese las ventas del vendedor 2:
+> 20
+Ingrese las ventas del vendedor 3:
+> 13
+Ingrese las ventas del vendedor 4:
+> 15
+Ventas ordenadas de mayor a menor:
+puesto 4: 20
+puesto 3: 15
+puesto 2: 15
+puesto 1: 13
+El resultado del 4 menos el 1: 7
+El resultado del 2 menos el 1: 2
+El resultado del 4 menos el 3: 5
+El resultado del 3 menos el 2: 0
+La suma de todas las ventas es: 63
+el promedio es de: 15.75
+*** Ejecución Finalizada. ***
+
+
+
