@@ -1,0 +1,109 @@
+Diseña un algoritmo que emplee subprogramas / funciones / subprocesos, para calcular el área y volumen de 3 figuras geométricas diferentes. 
+
+El usuario debe poder elegir cuál figura desea calcular y mostrar sus resultados, el programa debe poder repetirse si el usuario lo desea y elegir otra opción.
+
+
+//volumen de un cubo //
+SubProceso calcular_volumen_de_cubo(lado)
+	Escribir "escribir el valor de un lado del cubo: "
+	Leer lado
+	vol=lado*lado*lado
+	Escribir "el volumen del cubo es de: ", vol
+	arecub=lado*lado
+	Escribir "el area del cubo es de: ", arecub
+FinSubProceso
+
+//volumen de un cilindro//
+SubProceso volumen_de_un_cilindro(radio)
+	Escribir "escribir el radio de la base circular del cilindro: "
+	Leer radio
+	Escribir "escribir la altura del cilindro: "
+	Leer h
+	volcil=(3.1416*(radio*radio))*h
+	Escribir "el volumen del cilindro es de: ", volcil
+	arecil=3.1416*(radio*radio)
+	Escribir "el area del cilindro es de: ", arecil
+FinSubProceso
+
+//volumen de un prisma rectangular//
+SubProceso  volumen_de_un_prisma_rectangular(lar,anch,alt)
+	Escribir "escriba el largo del prisma: "
+	Leer lar
+	Escribir "ingrese el ancho del prisma: "
+	Leer anch
+	Escribir "ingrese el alto del prisma: "
+	Leer alt
+	volpri=lar*anch*alt
+	Escribir "el volumen del prisma rectangular es de: ", volpri
+	arepris=lar*anch
+	Escribir "el area del prisma rectangular es de: ", arepris
+FinSubProceso
+
+//elegir figura para obtener el volumen//
+Algoritmo volumenes_X
+	
+	Escribir "eliga de que figura desea saber el volumen marque 1 si quiere el volumen de un cubo, marque 2 si quiere el volumen de un cilindro, o marque 3 si quiere el volumen nde un prisma rectangular"
+	Leer opc
+	
+	si opc = 1 Entonces
+		calcular_volumen_de_cubo(lado)
+	SiNo
+		si opc = 2 Entonces
+			volumen_de_un_cilindro(radio)
+		SiNo
+			volumen_de_un_prisma_rectangular(lar,anch,alt)
+		FinSi
+	FinSi
+	
+	Escribir "quieres repetir el proceso (SI) marca 1. (NO) MARCA 0"
+	Leer num
+	
+	Mientras num=1  Hacer
+		
+		Escribir "eliga de que figura desea saber el volumen marque 1 si quiere el volumen de un cubo, marque 2 si quiere el volumen de un cilindro, o marque 3 si quiere el volumen nde un prisma rectangular"
+		Leer opc
+		
+		si opc = 1 Entonces
+			calcular_volumen_de_cubo(lado)
+		SiNo
+			si opc = 2 Entonces
+				volumen_de_un_cilindro(radio)
+			SiNo
+				volumen_de_un_prisma_rectangular(lar,anch,alt)
+			FinSi
+		FinSi
+		
+		Escribir "quieres repetir el proceso (SI) marca 1. (NO) MARCA 0"
+		Leer num
+		
+	Fin Mientras
+	
+FinAlgoritmo
+
+
+*** Ejecución Iniciada. ***
+eliga de que figura desea saber el volumen marque 1 si quiere el volumen
+de un cubo, marque 2 si quiere el volumen de un cilindro, o marque 3 si q
+uiere el volumen nde un prisma rectangular
+> 1
+escribir el valor de un lado del cubo:
+> 5
+el volumen del cubo es de: 125
+el area del cubo es de: 25
+quieres repetir el proceso (SI) marca 1. (NO) MARCA 0
+> 1
+eliga de que figura desea saber el volumen marque 1 si quiere el volumen
+de un cubo, marque 2 si quiere el volumen de un cilindro, o marque 3 si q
+uiere el volumen nde un prisma rectangular
+> 2
+escribir el radio de la base circular del cilindro:
+> 5
+escribir la altura del cilindro:
+> 10
+el volumen del cilindro es de: 785.4
+el area del cilindro es de: 78.54
+quieres repetir el proceso (SI) marca 1. (NO) MARCA 0
+> 0
+*** Ejecución Finalizada. ***
+
+
