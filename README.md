@@ -38,3 +38,4 @@ Aprendizaje básico sobre el uso del sitio web GitHub para guardar nuestros avan
 ### Comentarios 
 
 Creo que es una materia fundamental para poder avanzar en este proceso ya que los lenguajes de programación son indispensables en esta carrera.
+Creo que es justo que para mejorar el curso en la materia necesitamos una explicación más profunda y que el profesor disipe nuestras dudas.
